@@ -1,0 +1,24 @@
+<div id="products" class="products">
+
+  {{#each products}}
+
+    <ul class="container-product">
+      <p class="title">{{this.title}}</p>
+      <img src="{{this.thumbnails.0}}" alt="product" />
+      <p class="description">{{this.description}}</p>
+      <p class="price">${{this.price}}</p>
+      <button
+        class="button-delete"
+        id="remove{{this.id}}"
+        onclick="getButtonRemove('remove{{this.id}}')"
+      >
+        Delete
+      </button>
+    </ul>
+
+  {{/each}}
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
